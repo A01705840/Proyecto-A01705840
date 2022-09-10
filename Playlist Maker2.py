@@ -1,4 +1,3 @@
-
 """
 Proyecto Creador de Playlists
 El programa reliza una búsqueda de artísta
