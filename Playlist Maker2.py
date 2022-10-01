@@ -10,13 +10,13 @@ Se pueden retirar y añadir canciones.
 #Con la biblioteca, quiero poner más artistas y canciones y hacer playlist de Spotify
 
 play_list = [ ]
-lista_artistas = [["Imagine Dragons","Believer","Thunder","Natural","Whatever It Takes", "Radioactive"],
-                  ["Harry Styles", "Adore You","Falling","Lights Up","Sign of Times", "Watermelon Sugar"],
-                  ["Alejandro Fernández","Amor de los Dos", "No", "Nube Viajera", "Abrázame", "Mátalas"],
-                  ["Kishi Bashi","I am the Anti-Christ to you", "Honeybody","This Must Be The Place","Can't let go Juno","Bright Whites"],
-                  ["Hans Zimmer", "Cornfield Chase", "Time", "Main Titles: Top Gun Maverick", "Day One", "Darkstar"],\
-                  ["Lorde","Ribs", "Royals", "Team","Liability","Green Light"]
-            ]
+lista_artistas = [
+    ["Imagine Dragons","Believer","Thunder","Natural","Whatever It Takes", "Radioactive"],
+    ["Harry Styles", "Adore You","Falling","Lights Up","Sign of Times", "Watermelon Sugar"],
+    ["Alejandro Fernández","Amor de los Dos", "No", "Nube Viajera", "Abrázame", "Mátalas"],
+    ["Kishi Bashi","I am the Anti-Christ to you", "Honeybody","This Must Be The Place","Can't let go Juno","Bright Whites"],
+    ["Hans Zimmer", "Cornfield Chase", "Time", "Main Titles: Top Gun Maverick", "Day One", "Darkstar"],
+    ["Lorde","Ribs", "Royals", "Team","Liability","Green Light"]]
 print("Hola! Hagamos tu nueva playlist!") 
 print("Escoge tres artistas: ")
 print ("{:<8}".format('Artistas'))
@@ -69,12 +69,12 @@ def quitar_cancion(no_canc):
                 print("{:<8}".format(Canciones))
     else:
         print("La canción no está en esta playlist")
-def obten_lista_del_mes(compendio_musica,art_canc):
-     art_canc = str(input("Escoge un artista para ver sus canciones:"))
-     for linea in lista_artistas:
-         if art_canc == linea[0]:
-             linea.pop(0)
-             print(linea)
+def obten_lista_de_artista(lista,art_canc):
+    art_canc = input("Escoge un artista para ver sus canciones:")
+    for linea in lista_artistas:
+        if art_canc == linea[0]:
+            linea.pop(0)
+            print(linea)
 busca_canciones(artista_1, artista_2, artista_3)
 for v in play_list:
     Canciones = v
@@ -103,8 +103,8 @@ while add_canc != "Exit" and add_canc != "exit": #Cambié el while True con brea
             Artistas = lista_artistas[i][0]
             print (Artistas)
             i = i + 1
-        art_canc = ()
-        obten_lista_del_mes(art_canc, lista_artistas)
+        art_canc = " "
+        obten_lista_de_artista(art_canc, lista_artistas)
         add_canc = "%"
     if add_canc == "%":
         print("¿Añadir otra canción? - A")
