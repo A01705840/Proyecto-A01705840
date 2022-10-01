@@ -10,16 +10,21 @@ Se pueden retirar y añadir canciones.
 #Con la biblioteca, quiero poner más artistas y canciones y hacer playlist de Spotify
 
 play_list = [ ]
-lista_artistas = ["Imagine Dragons" , "Harry Styles", "Alejandro Fernández",\
-    "Kishi Bashi", "Hans Zimmer", "Lorde"]
-print("Hola! Hagamos tu nueva playlist!")
+lista_artistas = [["Imagine Dragons","Believer","Thunder","Natural","Whatever It Takes", "Radioactive"],
+                  ["Harry Styles", "Adore You","Falling","Lights Up","Sign of Times", "Watermelon Sugar"],
+                  ["Alejandro Fernández","Amor de los Dos", "No", "Nube Viajera", "Abrázame", "Mátalas"],
+                  ["Kishi Bashi","I am the Anti-Christ to you", "Honeybody","This Must Be The Place","Can't let go Juno","Bright Whites"],
+                  ["Hans Zimmer", "Cornfield Chase", "Time", "Main Titles: Top Gun Maverick", "Day One", "Darkstar"],\
+                  ["Lorde","Ribs", "Royals", "Team","Liability","Green Light"]
+            ]
+print("Hola! Hagamos tu nueva playlist!") 
 print("Escoge tres artistas: ")
 print ("{:<8}".format('Artistas'))
-
-for v in lista_artistas:
-    Artistas = v
-    print ("{:<8}".format(Artistas)) #Para que se vea en forma de lista #Formato Tabular de DelftStack(2021)Imprimir datos en formato tabular en Python
-
+i = 0
+while i < len(lista_artistas):
+    Artistas = lista_artistas[i][0]
+    print (Artistas)
+    i = i + 1
 
 artista_1 = str(input("Dime tu artista favorito: "))
 artista_2 = str(input("Dime otro artista famoso: "))
@@ -64,7 +69,12 @@ def quitar_cancion(no_canc):
                 print("{:<8}".format(Canciones))
     else:
         print("La canción no está en esta playlist")
-    
+def obten_lista_del_mes(compendio_musica,art_canc):
+     art_canc = str(input("Escoge un artista para ver sus canciones:"))
+     for linea in lista_artistas:
+         if art_canc == linea[0]:
+             linea.pop(0)
+             print(linea)
 busca_canciones(artista_1, artista_2, artista_3)
 for v in play_list:
     Canciones = v
@@ -72,6 +82,7 @@ for v in play_list:
     
 print("¿Añadir otra canción? - A")
 print("¿Quitar una canción?-Q")
+print("Volver a ver los artistas - V")
 print("Si deseas salir: - Exit")
 add_canc = input()
 
@@ -86,9 +97,19 @@ while add_canc != "Exit" and add_canc != "exit": #Cambié el while True con brea
         print("Tu nueva playlist es: ")
         quitar_cancion(no_canc)
         add_canc = "%"
+    if add_canc == "V" or add_canc == "v":
+        i = 0
+        while i < len(lista_artistas):
+            Artistas = lista_artistas[i][0]
+            print (Artistas)
+            i = i + 1
+        art_canc = ()
+        obten_lista_del_mes(art_canc, lista_artistas)
+        add_canc = "%"
     if add_canc == "%":
         print("¿Añadir otra canción? - A")
         print("¿Quitar una canción?-Q")
+        print("Volver a ver los artistas - V")
         print("Si deseas salir: - Exit")
         add_canc = input()
     else:
