@@ -1,36 +1,12 @@
-
+import random
 """
 Proyecto Creador de Playlists
 El programa reliza una búsqueda de artísta
 y pone en una playlist, las canciones más famosas.
 Se pueden retirar y añadir canciones.
 """
-#La Bilbioteca que usaré más tarde se llama Spotipy.
-#tuve que registrarme como desarrolladora para tener un cliend ID y usar la biblioteca
-#Con la biblioteca, quiero poner más artistas y canciones y hacer playlist de Spotify
 
-play_list = [ ]
-lista_artistas = [
-    ["Imagine Dragons","Believer","Thunder","Natural","Whatever It Takes", "Radioactive"],
-    ["Harry Styles", "Adore You","Falling","Lights Up","Sign of Times", "Watermelon Sugar"],
-    ["Alejandro Fernández","Amor de los Dos", "No", "Nube Viajera", "Abrázame", "Mátalas"],
-    ["Kishi Bashi","I am the Anti-Christ to you", "Honeybody","This Must Be The Place","Can't let go Juno","Bright Whites"],
-    ["Hans Zimmer", "Cornfield Chase", "Time", "Main Titles: Top Gun Maverick", "Day One", "Darkstar"],
-    ["Lorde","Ribs", "Royals", "Team","Liability","Green Light"]]
-print("Hola! Hagamos tu nueva playlist!") 
-print("Escoge tres artistas: ")
-print ("{:<8}".format('Artistas'))
-i = 0
-while i < len(lista_artistas):
-    Artistas = lista_artistas[i][0]
-    print (Artistas)
-    i = i + 1
-
-artista_1 = str(input("Dime tu artista favorito: "))
-artista_2 = str(input("Dime otro artista famoso: "))
-artista_3 = str(input("Dime tu último artista: "))
-def busca_canciones(artista_1, artista_2, artista_3):
-    global play_list
+def busca_canciones(artista_1, artista_2, artista_3,play_list):
     while len(play_list) < 15:
         if artista_1  == "Imagine Dragons" or "imagine dragons" or artista_2   == "Imagine Dragons" or "imagine dragons" or artista_3  == "Imagine Dragons"\
         or artista_3  =="imagine dragons":
@@ -54,14 +30,12 @@ def busca_canciones(artista_1, artista_2, artista_3):
             print("Lo siento, no hay datos del artista :(")
 
 def nueva_playlist(nueva_canc):
-    global play_list
     play_list.append(nueva_canc)
     for v in play_list:
             Canciones = v
             print("{:<8}".format(Canciones))
     add_canc = "%"
 def quitar_cancion(no_canc):
-    global play_list
     if no_canc in play_list:
         play_list.remove(no_canc)
         for v in play_list:
@@ -75,7 +49,29 @@ def obten_lista_de_artista(lista,art_canc):
         if art_canc == linea[0]:
             linea.pop(0)
             print(linea)
-busca_canciones(artista_1, artista_2, artista_3)
+            
+lista_artistas = [
+    ["Imagine Dragons","Believer","Thunder","Natural","Whatever It Takes", "Radioactive"],
+    ["Harry Styles", "Adore You","Falling","Lights Up","Sign of Times", "Watermelon Sugar"],
+    ["Alejandro Fernández","Amor de los Dos", "No", "Nube Viajera", "Abrázame", "Mátalas"],
+    ["Kishi Bashi","I am the Anti-Christ to you", "Honeybody","This Must Be The Place","Can't let go Juno","Bright Whites"],
+    ["Hans Zimmer", "Cornfield Chase", "Time", "Main Titles: Top Gun Maverick", "Day One", "Darkstar"],
+    ["Lorde","Ribs", "Royals", "Team","Liability","Green Light"]]
+print("Hola! Hagamos tu nueva playlist!") 
+print("Escoge tres artistas: ")
+print ("{:<8}".format('Artistas'))
+i = 0
+while i < len(lista_artistas):
+    Artistas = lista_artistas[i][0]
+    print (Artistas)
+    i = i + 1
+artista_1 = str(input("Dime tu artista favorito: "))
+artista_2 = str(input("Dime otro artista famoso: "))
+artista_3 = str(input("Dime tu último artista: "))
+play_list = [ ]
+
+
+busca_canciones(artista_1, artista_2, artista_3,play_list)
 for v in play_list:
     Canciones = v
     print ("{:<8}".format(Canciones))
@@ -85,6 +81,7 @@ print("¿Quitar una canción?-Q")
 print("Volver a ver los artistas - V")
 print("Si deseas salir: - Exit")
 add_canc = input()
+
 
 while add_canc != "Exit" and add_canc != "exit": #Cambié el while True con break al final por un while que terminara con la palabra Exit. 
     if add_canc == "A" or add_canc == "a":
@@ -115,3 +112,5 @@ while add_canc != "Exit" and add_canc != "exit": #Cambié el while True con brea
     else:
         print("Por favor, ingrese una de las tres opciones")
         add_canc = "%"
+        
+
