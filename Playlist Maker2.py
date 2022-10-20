@@ -16,29 +16,29 @@ def busca_canciones(artista_1, artista_2, artista_3, play_list):
    devuelve: playlist con las top 5 canciones de los 3 artistas
    """
     while len(play_list) < 15:
-        if artista_1 == "Imagine Dragons" or "imagine dragons" or \
-                    artista_2 == "Imagine Dragons" or "imagine dragons" or \
-                    artista_3 == "Imagine Dragons" or artista_3 == \
-                    "imagine dragons":
-            play_list.extend(["Believer", "Thunder", "Natural",
-                              "Whatever It Takes", "Radioactive"])
         if artista_1 == "Harry Styles" or artista_1 == "harry styles" or\
                 artista_2 == "Harry Styles" or artista_2 == \
                 "harry styles" or artista_3 == "Harry Styles"\
                 or artista_3 == "harry styles":
             play_list.extend(["Adore You", "Falling", "Lights Up",
                               "Sign of Times", "Watermelon Sugar"])
+        if artista_1 == "Imagine Dragons" or artista_1 == "imagine dragons"\
+                or artista_2 == "Imagine Dragons" or artista_2 ==\
+                "imagine dragons" or artista_3 == "Imagine Dragons" or\
+                artista_3 == "imagine dragons":
+            play_list.extend(["Believer", "Thunder", "Natural",
+                              "Whatever It Takes", "Radioactive"])
         if artista_1 == "Alejandro Fernandez" or artista_1 == \
                 "alejandro fernandez" or artista_2 ==\
-                "Alejandro Fernandez" or artista_2 == \
+                "Alejandro Fernandez" or artista_2 ==\
                 "alejandro fernandez" or artista_3 == \
                 "Alejandro Fernandez" or artista_3 == \
                 "alejandro fernandez":
             play_list.extend(["Amor de los Dos", "No", "Nube Viajera",
                               "Abrázame", "Mátalas"])
-        if artista_1 == "Kishi Bashi" or artista_1 == "kishi bashi" or \
+        if artista_1 == "Kishi Bashi" or artista_1 == "kishi bashi" or\
                 artista_2 == "Kishi Bashi" or artista_2 == "kishi bashi"\
-                or artista_3 == "Kishi Bashi" \
+                or artista_3 == "Kishi Bashi"\
                 or artista_3 == "kishi bashi":
             play_list.extend(["I am the Anti-Christ to you", "Honeybody",
                               "This Must Be The Place", "Can't let go Juno",
