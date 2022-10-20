@@ -1,3 +1,6 @@
+
+from time import sleep
+import sys
 """
 Proyecto Creador de Playlists
 El programa reliza una búsqueda de artísta
@@ -6,6 +9,19 @@ Se pueden retirar y añadir canciones.
 """
 
 '''--------------------------CREACIÓN DE PLAYLIST-------------------------'''
+
+
+def text(texto, speed):
+    """
+    (uso de biblioteca, uso de funciones)
+    recibe: string de texto,velocidad de texto
+    imprime cada letra segun la velocidad
+    devuelve: texto impreso según la velocidad
+    """
+    for c in texto:
+        print(c, end='')
+        sys.stdout.flush()
+        sleep(speed)
 
 
 def busca_canciones(artista_1, artista_2, artista_3, play_list):
@@ -147,10 +163,14 @@ for v in play_list:
     print("{:<8}".format(Canciones))
 
 '''----Menú de opciones----'''
-print("¿Añadir otra canción? - A")
-print("¿Quitar una canción?-Q")
-print("Volver a ver los artistas - V")
-print("Si deseas salir: - Exit")
+a = ("¿Añadir otra canción? - A")
+q = ("¿Quitar una canción?-Q")
+v = ("Volver a ver los artistas - V")
+e = ("Si deseas salir: - Exit")
+text(a, 0.03)
+text(q, 0.03)
+text(v, 0.03)
+text(e, 0.03)
 add_canc = input()
 
 
