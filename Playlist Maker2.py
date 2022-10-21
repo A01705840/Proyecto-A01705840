@@ -163,10 +163,10 @@ for v in play_list:
     print("{:<8}".format(Canciones))
 
 '''----Menú de opciones----'''
-a = ("¿Añadir otra canción? - A")
-q = ("¿Quitar una canción?-Q")
-v = ("Volver a ver los artistas - V")
-e = ("Si deseas salir: - Exit")
+a = ("¿Añadir otra canción? - A\n")
+q = ("¿Quitar una canción?-Q\n")
+v = ("Volver a ver los artistas - V\n")
+e = ("Si deseas salir: - Exit\n")
 text(a, 0.03)
 text(q, 0.03)
 text(v, 0.03)
